@@ -9,7 +9,7 @@ const DashBoard = () => {
       <div
         style={{
           display: "flex",
-          gap: "10px",
+          gap: "150px",
           height: "100vh",
           backgroundColor: "#f5f5f5",
         }}
