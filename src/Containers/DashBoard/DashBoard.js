@@ -1,6 +1,7 @@
 import React from "react";
 import Sidebar from "./../../Components/SideBar/SideBar";
 import HoverDevCards from "../../Components/Cards/Cards";
+import VerticalAccordion from "../../Components/Match_Applied_Jobs/MatchAppliedJobs";
 
 const DashBoard = () => {
   return (
@@ -18,7 +19,12 @@ const DashBoard = () => {
         </div>
 
         <div style={{ width: "65%" }}>
-          <HoverDevCards />
+          <div>
+            <HoverDevCards />
+          </div>
+          <div>
+            <VerticalAccordion />
+          </div>
         </div>
       </div>
     </>
