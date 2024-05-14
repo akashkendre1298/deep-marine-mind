@@ -1,35 +1,106 @@
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: -350px;
-  width: 350px;
-  height: 100vh;
-  background-color: #333;
-  padding: 20px;
-  color: #fff;
-  transition: left 0.3s ease;
+.header-component {
 }
-
-.sidebar.open {
-  left: 0;
+@media (max-width: 768px) {
+  .header-component {
+    width: 100vh;
+  }
 }
-
-.sidebar h1 {
-  margin-bottom: 20px;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar ul li {
-  padding: 10px;
+.icon-text {
+  align-items: center;
+  appearance: none;
+  /* background-image: radial-gradient(
+    100% 100% at 100% 0,
+    #5adaff 0,
+    #9b59b6 100%
+  ); */
+  background-color: #796d9d;
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
+  box-sizing: border-box;
   cursor: pointer;
+  display: inline-flex;
+  /* font-family: "JetBrains Mono", monospace; */
+  height: 30px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  color: white;
+}
+.two {
+  background-color: #1976d2;
+  height: 100%;
 }
 
-.toggleBtn {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
+.icon-text:hover {
+  background: none;
+  /* background-color: white; */
 }
+
+.css-6hp17o-MuiList-root-MuiMenu-list {
+  border-radius: 15px;
+}
+
+.menuitems-of-header.active {
+  align-items: center;
+  appearance: none;
+  background-color: #fff;
+  color: #1976d2;
+
+  /* background-image: radial-gradient(
+    100% 100% at 100% 0,
+    #5adaff 0,
+    #5468ff 100%
+  ); */
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono", monospace;
+  height: 30px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 18px;
+  width: 100%;
+}
+.menuitems-of-header {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-weight: bolder;
+}
+.menuitems-of-header:hover {
+}
+/* .MuiBox-root,
+.css-zxdg2z {
+  padding: 5px;
+} */
