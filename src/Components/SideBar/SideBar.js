@@ -3,8 +3,8 @@ import "./SideBar";
 
 const Sidebar = () => {
   return (
-    <div style={{ width: "350px", backgroundColor: "red" }}>
-      <h1>SideBar</h1>
+    <div style={{ width: "300px" }}>
+      <h1 className=" font-bold ">Deep Marine Mind</h1>
     </div>
   );
 };
