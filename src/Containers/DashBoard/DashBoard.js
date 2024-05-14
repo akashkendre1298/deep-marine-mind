@@ -1,4 +1,4 @@
-import React from "react";
+ import React from "react";
 import Sidebar from "./../../Components/SideBar/SideBar";
 import HoverDevCards from "../../Components/Cards/Cards";
 import VerticalAccordion from "../../Components/Match_Applied_Jobs/MatchAppliedJobs";
@@ -9,7 +9,7 @@ const DashBoard = () => {
       <div
         style={{
           display: "flex",
-          gap: "10px",
+          gap: "150px",
           height: "100vh",
           backgroundColor: "#f5f5f5",
         }}

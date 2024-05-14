@@ -19,7 +19,7 @@ const VerticalAccordion = () => {
   const [open, setOpen] = useState(items[0].id);
 
   return (
-    <section className="p-1 bg-indigo-600">
+    <section className="p-1">
       <div className="flex flex-col lg:flex-row h-fit lg:h-[450px] w-full max-w-6xl mx-auto shadow overflow-hidden">
         {items.map((item) => (
           <Panel
@@ -61,6 +61,15 @@ const Panel = ({ open, setOpen, id, title }) => {
       shipType: "Ship Type 3",
       rank: "Rank 3",
     },
+    {
+      id: 2,
+      title: "Job Title 2",
+      company: "Company 2",
+      shipType: "Ship Type 2",
+      rank: "Rank 2",
+    },
+      
+   
   ];
 
   const appliedJobData = [
@@ -85,6 +94,15 @@ const Panel = ({ open, setOpen, id, title }) => {
       shipType: "Ship Type 7",
       rank: "Rank7",
     },
+   
+    {
+      id: 7,
+      title: "Job Title 7",
+      company: "Company 7",
+      shipType: "Ship Type 7",
+      rank: "Rank7",
+    },  
+   
   ];
 
   const currentData =
@@ -118,7 +136,10 @@ const Panel = ({ open, setOpen, id, title }) => {
             exit={{ opacity: 0 }}
             className="w-full h-full overflow-hidden relative"
           >
-            <div className="flex justify-between bg-gray-200 px-5">
+         
+
+            <div className="w-full overflow-auto mb-2  items-center h-5/6">
+            <div className="flex justify-between py-5  px-5 pb-16">
               <div>
                 <p className="text-xl font-bold ">{title}</p>
               </div>
@@ -132,30 +153,32 @@ const Panel = ({ open, setOpen, id, title }) => {
               <button>View All</button>
             </div>
 
-            <table className="w-full bg-gray-200 border border-gray-400 h-full mb-2">
-              <thead>
-                <tr className="h-5">
-                  <th className="p-4 border border-gray-400">Title</th>
-                  <th className="p-4 border border-gray-400">Company</th>
-                  <th className="p-4 border border-gray-400">Ship Type</th>
-                  <th className="p-4 border border-gray-400">Rank</th>
-                </tr>
-              </thead>
-              <tbody>
-                {currentData.map((item) => (
-                  <tr key={item.id} className="h-5">
-                    <td className="p-4 border border-gray-400">{item.title}</td>
-                    <td className="p-4 border border-gray-400">
-                      {item.company}
-                    </td>
-                    <td className="p-4 border border-gray-400">
-                      {item.shipType}
-                    </td>
-                    <td className="p-4 border border-gray-400">{item.rank}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+  <table className="w-full divide-y divide-gray-400  py-2">
+    <thead>
+      <tr className="h-6 pb-2">
+        <th className="p-1">Title</th>
+        <th className="p-1">Company</th>
+        <th className="p-1">Ship Type</th>
+        <th className="p-1">Rank</th>
+      </tr>
+    </thead>
+    <tbody>
+      {currentData.map((item) => (
+        <tr key={item.id} className="h-6 text-center">
+          <td className="p-3">{item.title}</td>
+          <td className="p-3">{item.company}</td>
+          <td className="p-3">{item.shipType}</td>
+          <td className="p-3">{item.rank}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
           </motion.div>
         )}
       </AnimatePresence>
