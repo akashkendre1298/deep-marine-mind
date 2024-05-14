@@ -245,7 +245,9 @@ import Button from "@mui/material/Button";
 import GridViewIcon from "@mui/icons-material/GridView";
 import AssignmentIndIcon from "@mui/icons-material/AssignmentInd";
 import Tooltip from "@mui/material/Tooltip";
-
+import NotificationsIcon from "@mui/icons-material/Notifications";
+import ChatIcon from "@mui/icons-material/Chat";
+import SettingsIcon from "@mui/icons-material/Settings";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./SideBar.css";
 
@@ -387,7 +389,7 @@ export default function Sidebar() {
       <CssBaseline />
 
       <AppBar position="fixed" open={open}>
-        <div className="header-component">
+        <div className="header-component flex items-center justify-between">
           <Toolbar>
             <IconButton
               color="inherit"
@@ -402,6 +404,7 @@ export default function Sidebar() {
             >
               <MenuIcon />
             </IconButton>
+
             <Typography
               variant="h6"
               noWrap
@@ -413,6 +416,15 @@ export default function Sidebar() {
               {activetab}
             </Typography>
           </Toolbar>
+
+          <div className=" mr-8 gap-3 justify-between flex ">
+            <div className="flex items-center justify-evenly gap-4">
+              <div>News</div>
+              <div>ChatBot</div>
+            </div>
+            <NotificationsIcon />
+            <SettingsIcon />
+          </div>
         </div>
       </AppBar>
 
@@ -668,57 +680,6 @@ export default function Sidebar() {
                 </ListItemButton>
               </div>
             </ListItem>
-          </List>
-          <List>
-            <ListItem
-              disablePadding
-              sx={{ display: "block" }}
-              onClick={(event) => handleClick(event, "Vendor Payment")}
-            >
-              <div className="menuitems-of-header ">
-                <ListItemButton
-                  sx={{
-                    minHeight: 48,
-                    justifyContent: open ? "initial" : "center",
-                    px: 2.5,
-                  }}
-                  className={
-                    activetab === "Vendor Payment"
-                      ? "menuitems-of-header active"
-                      : "menuitems-of-header"
-                  }
-                >
-                  <ListItemIcon
-                    sx={{
-                      minWidth: 0,
-                      mr: open ? 3 : "auto",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <Tooltip title="Vendor Payment">
-                      <span>
-                        <CurrencyRupeeTwoToneIcon sx={{ color: "#fff" }} />{" "}
-                      </span>
-                    </Tooltip>
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="Vendor Payment"
-                    sx={{ opacity: open ? 1 : 0 }}
-                  />
-                </ListItemButton>
-              </div>
-            </ListItem>
-            {/* {activetab == "Vendor Payment" && (
-              <Menu
-                id="simple-menu"
-                anchorEl={anchorEl}
-                open={Boolean(anchorEl)}
-                onClose={handleClose}
-              >
-                <MenuItem onClick={handleClose}></MenuItem>
-                <MenuItem onClick={handleClose}> </MenuItem>
-              </Menu>
-            )} */}
           </List>
 
           <List>
