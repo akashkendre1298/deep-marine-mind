@@ -98,7 +98,7 @@ export default function CustomizedTables() {
     <h2 className='text-2xl font-bold'>Applied Jobs </h2>
       </div>
       <div>
-        <button className='font-bold'>View All</button>
+        <button className='font-bold border-black-100'>View All</button>
       </div>
     </div>
 
