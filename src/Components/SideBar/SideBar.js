@@ -418,6 +418,8 @@ export default function Sidebar() {
             </Typography>
           </Toolbar>
           <div className="flex items-center justify-evenly gap-4">
+          <div className="cursor-pointer">Jobs</div>
+
             <div className="cursor-pointer">News</div>
             <div className="cursor-pointer">ChatBot</div>
           </div>
