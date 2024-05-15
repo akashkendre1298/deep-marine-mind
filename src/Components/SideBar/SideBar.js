@@ -388,9 +388,7 @@ export default function Sidebar() {
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
 
-       
       <AppBar position="fixed" open={open}>
-
         <div className="header-component flex items-center justify-between">
           <Toolbar>
             <IconButton
@@ -401,7 +399,7 @@ export default function Sidebar() {
               sx={{
                 marginRight: 5,
                 ...(open && { display: "none" }),
-                color: "black",
+                color: "white",
               }}
             >
               <MenuIcon />
@@ -418,14 +416,20 @@ export default function Sidebar() {
               {activetab}
             </Typography>
           </Toolbar>
-
+          <div className="flex items-center justify-evenly gap-4">
+            <div>News</div>
+            <div>ChatBot</div>
+          </div>
           <div className=" mr-8 gap-3 justify-between flex ">
-            <div className="flex items-center justify-evenly gap-4">
-              <div>News</div>
-              <div>ChatBot</div>
-            </div>
             <NotificationsIcon />
             <SettingsIcon />
+            <LogoutOutlinedIcon
+              size="lg"
+              sx={{
+                color: "white",
+              }}
+              onClick={handleLogout}
+            />{" "}
           </div>
         </div>
       </AppBar>
@@ -684,7 +688,7 @@ export default function Sidebar() {
             </ListItem>
           </List>
 
-          <List>
+          {/* <List>
             <ListItem
               disablePadding
               sx={{ display: "block" }}
@@ -740,7 +744,7 @@ export default function Sidebar() {
                 />
               </ListItemButton>
             </ListItem>
-          </List>
+          </List> */}
 
           <Divider />
         </div>
