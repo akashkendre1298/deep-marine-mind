@@ -250,6 +250,7 @@ import ChatIcon from "@mui/icons-material/Chat";
 import SettingsIcon from "@mui/icons-material/Settings";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./SideBar.css";
+import Settings from "./Settings";
 
 import {
   faUserPlus,
@@ -442,21 +443,25 @@ export default function Sidebar() {
         > */}
         <div className="two">
           <DrawerHeader>
-            <IconButton
-              onClick={handleDrawerClose}
-              sx={{
-                color: "black",
-                "&:hover": {
-                  // backgroundColor: "#ffccf6", // Adjust alpha for desired faintness
-                },
-              }}
-            >
-              {theme.direction === "rtl" ? (
-                <ChevronRightIcon />
-              ) : (
-                <ChevronLeftIcon />
-              )}
-            </IconButton>
+            <div className=" flex items-center justify-between gap-9">
+              <p className="text-sm text-white">DeepMarineMind</p>
+
+              <IconButton
+                onClick={handleDrawerClose}
+                sx={{
+                  color: "white",
+                  "&:hover": {
+                    // backgroundColor: "#ffccf6", // Adjust alpha for desired faintness
+                  },
+                }}
+              >
+                {theme.direction === "rtl" ? (
+                  <ChevronRightIcon />
+                ) : (
+                  <ChevronLeftIcon />
+                )}
+              </IconButton>
+            </div>
           </DrawerHeader>
 
           <Divider />
@@ -468,6 +473,63 @@ export default function Sidebar() {
             >
               <div className="menuitems-of-header "></div>
             </ListItem>
+          </List>
+          <List>
+            <ListItem
+              disablePadding
+              sx={{ display: "block" }}
+              onClick={(event) => handleClick(event, "DashBoard")}
+            >
+              <div className="menuitems-of-header ">
+                <ListItemButton
+                  className={
+                    activetab === "DashBoard"
+                      ? "menuitems-of-header active"
+                      : "menuitems-of-header"
+                  }
+                  sx={{
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.5,
+                  }}
+                >
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <Tooltip title="DashBoard">
+                      {" "}
+                      <span>
+                        <PersonAddIcon sx={{ color: "#fff" }} />
+                      </span>
+                    </Tooltip>
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="DashBoard"
+                    sx={{ opacity: open ? 1 : 0 }}
+                  />
+                </ListItemButton>
+              </div>
+            </ListItem>
+            {/* <div className="Menu-items-styling">
+              {activetab == "Profile" && (
+                <Menu
+                  id="simple-menu"
+                  anchorEl={anchorEl}
+                  open={Boolean(anchorEl)}
+                  onClose={handleClose}
+                >
+                  <MenuItem onClick={handleClose}></MenuItem>
+
+                  <MenuItem onClick={handleClose}> </MenuItem>
+                  <MenuItem onClick={handleClose}> </MenuItem>
+                  <MenuItem onClick={handleClose}> </MenuItem>
+                </Menu>
+              )}
+            </div> */}
           </List>
           <List>
             <ListItem
@@ -748,6 +810,7 @@ export default function Sidebar() {
 
           <Divider />
         </div>
+
         {/* </Scrollbars> */}
       </Drawer>
 
