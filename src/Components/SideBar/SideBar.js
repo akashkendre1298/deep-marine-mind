@@ -356,7 +356,7 @@ const Drawer = styled(MuiDrawer, {
 
 export default function Sidebar() {
   const theme = useTheme();
-  const [open, setOpen] = React.useState();
+  const [open, setOpen] = React.useState(true);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -388,7 +388,9 @@ export default function Sidebar() {
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
 
+       
       <AppBar position="fixed" open={open}>
+
         <div className="header-component flex items-center justify-between">
           <Toolbar>
             <IconButton
