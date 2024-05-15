@@ -91,7 +91,19 @@ export default function CustomizedTables() {
   }, []);
 
   return (
+    <>
+       <div className='flex justify-between pb-3 align-middle'>
+      <div>
+
+    <h2 className='text-2xl font-bold'>Applied Jobs </h2>
+      </div>
+      <div>
+        <button className='font-bold'>View All</button>
+      </div>
+    </div>
+
     <TableContainer component={Paper}>
+ 
       <Table aria-label="customized table">
         <TableHead>
           <TableRow>
@@ -126,5 +138,6 @@ export default function CustomizedTables() {
         </TableBody>
       </Table>
     </TableContainer>
+    </>
   );
 }
