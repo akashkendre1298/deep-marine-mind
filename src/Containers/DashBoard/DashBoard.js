@@ -1,9 +1,10 @@
- import React from "react";
+import React from "react";
 import Sidebar from "./../../Components/SideBar/SideBar";
 import HoverDevCards from "../../Components/Cards/Cards";
 import VerticalAccordion from "../../Components/Match_Applied_Jobs/MatchAppliedJobs";
 import Latest_job from "../../Components/Latest_Job/Latest_job";
 import Applied_Jobs from "../../Components/Applied_Jobs/Applied_Jobs";
+import Settings from "../../Components/SideBar/Settings";
 
 const DashBoard = () => {
   return (
@@ -24,16 +25,15 @@ const DashBoard = () => {
           <div>
             <HoverDevCards />
           </div>
-  
+
           <div className="flex gap-5">
+            <div style={{ width: "50%" }}>
+              <Latest_job />
+            </div>
 
-          <div style={{width:"50%"}}>
-           <Latest_job/>
-          </div>
-
-          <div style={{width:"50%"}}>
-            <Applied_Jobs/>
-          </div>
+            <div style={{ width: "50%" }}>
+              <Applied_Jobs />
+            </div>
           </div>
         </div>
       </div>
