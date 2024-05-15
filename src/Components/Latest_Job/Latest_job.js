@@ -8,6 +8,24 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
+// Skeleton Loader Component
+const SkeletonLoader = () => (
+  <TableRow>
+    <TableCell>
+      <div style={{ width: 80, height: 20, backgroundColor: 'rgba(0,0,0,0.1)' }}></div>
+    </TableCell>
+    <TableCell align="right">
+      <div style={{ width: 80, height: 20, backgroundColor: 'rgba(0,0,0,0.1)' }}></div>
+    </TableCell>
+    <TableCell align="right">
+      <div style={{ width: 80, height: 20, backgroundColor: 'rgba(0,0,0,0.1)' }}></div>
+    </TableCell>
+    <TableCell align="right">
+      <div style={{ width: 80, height: 20, backgroundColor: 'rgba(0,0,0,0.1)' }}></div>
+    </TableCell>
+  </TableRow>
+);
+
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: theme.palette.common.black,
@@ -23,7 +41,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
     backgroundColor: theme.palette.action.hover,
   },
   '&:hover': {
-    backgroundColor: theme.palette.primary.light, // Adjust the color here
+    backgroundColor: theme.palette.primary.light,
   },
   '&:last-child td, &:last-child th': {
     border: 0,
@@ -62,6 +80,16 @@ const latestJobData = [
 ];
 
 export default function CustomizedTables() {
+  const [isLoading, setIsLoading] = React.useState(true);
+
+  // Simulating loading delay
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <TableContainer component={Paper}>
       <Table aria-label="customized table">
@@ -74,16 +102,27 @@ export default function CustomizedTables() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {latestJobData.map((row) => (
-            <StyledTableRow key={row.id}>
-              <StyledTableCell component="th" scope="row">
-                {row.title}
-              </StyledTableCell>
-              <StyledTableCell align="right">{row.company}</StyledTableCell>
-              <StyledTableCell align="right">{row.shipType}</StyledTableCell>
-              <StyledTableCell align="right">{row.rank}</StyledTableCell>
-            </StyledTableRow>
-          ))}
+          {isLoading ? (
+           
+            <>
+              <SkeletonLoader />
+              <SkeletonLoader />
+              <SkeletonLoader />
+              <SkeletonLoader />
+            </>
+          ) : (
+            // Show actual data when loaded
+            latestJobData.map((row) => (
+              <StyledTableRow key={row.id}>
+                <StyledTableCell component="th" scope="row">
+                  {row.title}
+                </StyledTableCell>
+                <StyledTableCell align="right">{row.company}</StyledTableCell>
+                <StyledTableCell align="right">{row.shipType}</StyledTableCell>
+                <StyledTableCell align="right">{row.rank}</StyledTableCell>
+              </StyledTableRow>
+            ))
+          )}
         </TableBody>
       </Table>
     </TableContainer>
