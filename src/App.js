@@ -22,7 +22,7 @@ function App() {
         // Displaying the name while loading
         <div className="w-full h-screen grid place-content-center bg-black">
           <h1 className="animate__animated animate__zoomIn callout-title">
-            DEEP MARINE MIND
+            DEEPMARINEMIND
           </h1>
         </div>
       ) : (

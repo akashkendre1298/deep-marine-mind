@@ -418,13 +418,13 @@ export default function Sidebar() {
             </Typography>
           </Toolbar>
           <div className="flex items-center justify-evenly gap-4">
-            <div>News</div>
-            <div>ChatBot</div>
+            <div className="cursor-pointer">News</div>
+            <div className="cursor-pointer">ChatBot</div>
           </div>
           <div className=" mr-8 gap-3 justify-between flex ">
-            <NotificationsIcon />
-            <SettingsIcon />
-            <LogoutOutlinedIcon
+            <NotificationsIcon className="cursor-pointer" />
+            <SettingsIcon  className="cursor-pointer"/>
+            <LogoutOutlinedIcon className="cursor-pointer"
               size="lg"
               sx={{
                 color: "white",
